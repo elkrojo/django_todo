@@ -12,10 +12,11 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import dj_database_url
+
 if os.path.exists("env.py"):
   import env
 
-if os.environ.get('DEVELOPMENT'):
+if os.environ.get("DEVELOPMENT"):
     development = True
 else:
     development = False
@@ -33,7 +34,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = development
 
-ALLOWED_HOSTS = ['LOCALHOST', os.environ.get('HOSTNAME')]
+ALLOWED_HOSTS = ["LOCALHOST", os.environ.get("HOSTNAME")]
 
 
 # Application definition
@@ -90,7 +91,7 @@ if development:
         }
     }
 else:
-    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+    DATABASES = {'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
